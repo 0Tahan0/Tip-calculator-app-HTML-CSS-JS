@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  -webkit-box-sizing: 0;
+}
+body {
+  font-family: spaceMone-Bold;
+}
+input {
+  font-size: 24px;
+}
+.attribution {
+  font-size: 14px;
+  margin: 10px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  /* Primary Colors */
+  --Cyan: hsl(172, 67%, 45%);
+  --Red: #f55;
+  /* Netural */
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+.container {
+  width: auto;
+  height: 100vh;
+  background-color: var(--Light-grayish-cyan);
+  display: flex;
+
+  flex-flow: column;
+  padding: 20px 0;
+}
+.container .logo {
+  margin: 30px auto;
+}
+.content {
+  background-color: var(--White);
+  border-radius: 20px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+.result-section,
+.calculate-section {
+  flex-basis: 45%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* margin: 0 auto; */
+  /* margin:  30px auto; */
+}
+
+.calculate-section .input-container {
+  display: flex;
+  flex-flow: column;
+  padding: 10px 0;
+}
+.input-container .titles-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(--Dark-grayish-cyan);
+  margin: 7px 0;
+}
+.input-container .input-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--Very-light-grayish-cyan);
+  /* padding: 3px 8px; */
+  border-radius: 3px;
+  position: relative;
+  /* box-shadow: 0 0 2px 0px rgba(0, 0, 0, 20%); */
+}
+
+.input-box img {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.input-box .inp {
+  direction: rtl;
+  
+  
+}
+
+.input-container .buttons-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.buttons-box .btn {
+  background-color: var(--Very-dark-cyan);
+  color: var(--White);
+}
+.buttons-box .input-box .inp{
+  text-align: center;
+  margin: 0;
+}
+.buttons-box .input-box .inp::placeholder {
+  color: var(--Dark-grayish-cyan);
+  text-align: center;
+  font-size: 90%;
+}
+.buttons-box .input-box,
+.buttons-box .btn {
+  min-width: 85px;
+  width: 30%;
+  height: 50px;
+  margin: 5px auto;
+}
+
+/* result section */
+.result-section {
+  background-color: var(--Very-dark-cyan);
+  border-radius: inherit;
+  color: var(--White);
+
+}
+.result-section .result {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+  padding: 10px 0;
+}
+.result .result-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10%;
+  
+  
+}
+.result-box .titles {
+  display: flex;
+  flex-flow: column;
+  /* flex-basis: 50%; */
+}
+.titles p:nth-child(1) {
+  text-transform: capitalize;
+  color: var(--Light-grayish-cyan);
+}
+.titles p:nth-child(2) {
+  color: var(--Grayish-cyan);
+  font-size: small;
+}
+.result-box .result-box-number {
+  font-size: calc(1vmax + 25px);
+  color: var(--Cyan);
+}
+.result .btn {
+  width: 100%;
+  background-color: var(--Cyan);
+  color: var(--Very-dark-cyan);
+}
+.result .btn:disabled:hover {
+  background-color: var(--Cyan);
+  color: var(--Very-dark-cyan);
+}
+/* UI */
+.inp {
+  background-color: transparent;
+  color: var(--Very-dark-cyan);
+  background-color: var(--Very-light-grayish-cyan);
+  width: 100%;
+  margin: 5px 12px;
+  font-family: inherit;
+  border-radius: inherit;
+}
+
+.focusInp {
+  box-shadow: 0 0 1px 2px var(--Cyan);
+}
+.inp::placeholder {
+  color: var(--Grayish-cyan);
+  text-transform: capitalize;
+  
+}
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font: inherit;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: var(--Light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+}
+.btn.activeBtn {
+  background-color: var(--Cyan);
+  color: var(--Very-dark-cyan);
+}
+.inp,
+.btn {
+  outline: none;
+  border: none;
+  font-size: 24px;
+}
+.btn:disabled {
+  cursor: auto;
+  opacity: 0.3;
+}
+
+/* for js */
+
+.errorMessage {
+  color: var(--Red);
+}
+.input-container.error .input-box {
+  box-shadow: 0 0 2px 1px var(--Red);
+}
+.input-container.error .errorMessage {
+  visibility: visible;
+}
+.input-container .errorMessage {
+  visibility: hidden;
+}
+@font-face {
+  font-family: spaceMone-Bold;
+  src: url(assets/fonts/SpaceMono-Bold.ttf);
+}
+@media (max-width: 575px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    max-width: 60%;
+  }
+}
